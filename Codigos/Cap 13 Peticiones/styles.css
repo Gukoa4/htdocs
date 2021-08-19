@@ -1,0 +1,124 @@
+body {
+    color:rgb(46, 46, 38);
+    font-family: sans-serif;
+    background-color: rgb(231, 207, 154);
+    
+}
+
+.alerta {
+ border: 1px solid black;
+ text-align: center;
+ margin:auto 20px;
+ color: red;
+ background-color: black;
+ font-size: 1.4em;
+}
+dt {
+    text-decoration-line: underline;
+}
+pre{
+    margin: 0;
+    padding: 0;
+    display: block;
+    padding: 0.5em;
+    line-height: 1.3em;
+    color: #abb2bf;
+    background: #282c34;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+h1 {
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+p{
+    width: 80%;
+    padding: 6px;
+}
+
+form {
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+input{
+    display: block;
+    width: 100%;
+    padding: 6px;
+    margin: 9px 5px;
+    outline: none;   
+    box-sizing: border-box;
+}
+input:focus{
+    outline: none;
+    border: 1px solid #000;
+    background-color: #eee;
+}
+
+/* input:invalid {
+    background-color: pink;
+  } */
+
+
+.boton{
+    width: 50%;
+    margin-top: 18px;
+    padding: 9px;
+    
+}
+
+form {
+    width: 86%;
+    margin: auto;
+}
+
+.green {
+    color: rgb(97, 243, 97);
+}
+.red {
+    color: rgb(238, 111, 111);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: repeat(4,minmax(min-content,max-content));
+    grid-auto-rows: 50px;
+}
+
+.grid-container .grid-item {
+    padding: 10px;
+    border: 1px solid #26a;
+    margin: 5px;
+}
+
+.modal-background {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+    opacity: 0;
+}
+
+.modal {
+    background-color: #fff;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        display: flex;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

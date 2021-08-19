@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Peticiones http</title>
+</head>
+<body>
+    <h1>Peticiones HTML</h1>
+    <ul>      
+        <h2>Peticiones HTTP</h2>
+        <dl>
+            <dt>Definicion</dt>
+            <dd>Es un protocolo en el que se envia una solicitud que devuelve distintos codigos</dd>
+            <dt>Cliente y Servidor</dt>
+            <dd>son las partes que se comunican</dd>
+            <dd>Las peticiones http no guardan informacion</dd>
+        </dl>
+        <h2>Datos estructurados (JSON)</h2>
+        <dl>
+            <dt>Definicion, usos y sintaxis</dt>
+            <dd>JavaScript Object Notation, se usa para enviar datos al servidor y todo va entre comillas para evitar errores</dd>
+<pre><code> Objeto = {
+                "variable1" : "valor 1",
+                "variable2" : "valor 2"
+            }</code></pre>
+            <dt>Serializacion y Deserializacion</dt>
+            <dd>Serializado es cuando el json se pasa en formato string</dd>
+<pre><code> Objeto = {'"variable1" : "valor 1","variable2" : "valor 2"'}</code></pre>            
+            <dt>Método parse()</dt>
+            <dd>Convierte un string con estructura JSON a formato JSON (deserializar)</dd>
+            <dt>Método stringify</dt>
+            <dd>Convierte un dato de JavaScript en una cadena de texto JSON (serializar)</dd>
+            <dt>JSON PolyFill</dt>
+            <dd>simulan funcionalidad que algunos navegadores no soportan</dd>
+        </dl>
+        <h2>AJAX</h2>
+        <dl>
+            <dt>Introduccion e instalacion del servidor</dt>
+            <dd>Asynchronous JavaScript and xml lo que genera es que no sea necesario que la pagina se actualice ya que trabaja en paralelo y necesitamos un servidor como por ejemplo xammp</dd>
+            <dt>Objeto XMLHTTPRequest</dt>
+            <dd>Este obejto sirve para enviar peticiones/solicitud</dd>
+            <dt>Envia peticiones GET</dt>
+            <dd>con open() y send() se envian las peticiones get</dd>
+            <dt>Trabajar el resultado de las peticiones</dt>
+            <dd>Hay que tener en cuenta que el mensaje sea 200 y el estado puee ser 1-Se creo correctamente
+                2-la solicitud fue recibida correctamente 3- se esta procesando la peticion y la 4-es listo para ser usado
+            </dd>
+            <dt>Objeto ActivXObject</dt>
+            <dd></dd>
+            <dt>Nueva forma de trabajar el resultado</dt>
+            <dd></dd>
+            <dt>Enviar peticiones POST</dt>
+            <dd></dd>
+        </dl>
+        <h2>XMLHTTPRequest, Peticiones, etc</h2>
+
+        <h2>Diferencias entre GET y POST</h2>
+
+        <h2>Fetch</h2>
+        <dl>
+            <dt>Introduccion</dt>
+            <dd></dd>
+            <dt>Basado en promesas</dt>
+            <dd></dd>
+            <dt>Objeto fetch</dt>
+            <dd></dd>
+            <dt>text()</dt>
+            <dd></dd>
+            <dt>json()</dt>
+            <dd></dd>
+            <dt>blob()</dt>
+            <dd></dd>
+            <dt>formData()</dt>
+            <dd></dd>
+            <dt>arrayBuffer()</dt>
+            <dd></dd>
+        </dl>
+
+        <h2>Librería Axios</h2>
+        <dl>
+            <dt>Introduccion e instalacion</dt>
+            <dd></dd>
+            <dt>Basado en promesas</dt>
+            <dd></dd>
+            <dt>Objeto axios</dt>
+            <dd></dd>
+            <dt>metodo gt() y post()</dt>
+            <dd></dd>
+            <dt>formas de enviar datos</dt>
+            <dd></dd>
+            <dt>Ventajas</dt>
+            <dd></dd>
+        </dl>
+
+        <h2>Fetch y Axios con Async & Await</h2>
+        <dl>
+            <dt>Implementacion</dt>
+            <dd></dd>
+            <dt>Importancia de Try y catch</dt>
+            <dd></dd>
+        </dl>
+
+        <h2>Historia de Cofla 13</h2>
+    </ul>
+    <script src="ajax.js"></script>
+</body>
+</html>

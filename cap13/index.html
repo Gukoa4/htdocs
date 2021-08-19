@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <link rel="stylesheet" href="pre.css">
+    <link rel="icon" href="imagenes/002-ghosts.svg" type="image/svg">
+    <title>Peticiones http</title>
+</head>
+
+<body>
+    <h1>Peticiones HTML</h1>
+    <ul>
+        <h2>Peticiones HTTP</h2>
+        <dl>
+            <dt>Definicion</dt>
+            <dd>Es un protocolo en el que se envia una solicitud que devuelve distintos codigos</dd>
+            <dt>Cliente y Servidor</dt>
+            <dd>son las partes que se comunican</dd>
+            <dd>Las peticiones http no guardan informacion</dd>
+        </dl>
+        <h2>Datos estructurados (JSON)</h2>
+        <dl>
+            <dt>Definicion, usos y sintaxis</dt>
+            <dd>JavaScript Object Notation, se usa para enviar datos al servidor y todo va entre comillas para evitar
+                errores</dd>
+            <pre class="prettyprint"><code> Objeto = {
+                "variable1" : "valor 1",
+                "variable2" : "valor 2"
+            }</code></pre>
+            <dt>Serializacion y Deserializacion</dt>
+            <dd>Serializado es cuando el json se pasa en formato string</dd>
+            <pre class="prettyprint"><code> Objeto = {'"variable1" : "valor 1","variable2" : "valor 2"'}</code></pre>
+            <dt>Método parse()</dt>
+            <dd>Convierte un string con estructura JSON a formato JSON (deserializar)</dd>
+            <dt>Método stringify</dt>
+            <dd>Convierte un dato de JavaScript en una cadena de texto JSON (serializar)</dd>
+            <dt>JSON PolyFill</dt>
+            <dd>simulan funcionalidad que algunos navegadores no soportan</dd>
+        </dl>
+        <h2>AJAX</h2>
+        <dl>
+            <dt>Introduccion e instalacion del servidor</dt>
+            <dd>Asynchronous JavaScript and xml lo que genera es que no sea necesario que la pagina se actualice ya que
+                trabaja en paralelo y necesitamos un servidor como por ejemplo xammp</dd>
+            <dt>Objeto XMLHTTPRequest</dt>
+            <dd>Este obejto sirve para enviar peticiones/solicitud</dd>
+            <dt>Envia peticiones GET</dt>
+            <dd>con open() y send() se envian las peticiones get</dd>
+            <pre class="prettyprint">
+            peticion.open("GET", "informacion.txt");
+            peticion.send();</pre>
+            <dt>Trabajar el resultado de las peticiones</dt>
+            <dd>Hay que tener en cuenta que el mensaje sea 200 y el estado puede ser
+            </dd>
+            <dd>1 Se creo correctamente</dd>
+            <dd>2 La solicitud fue recibida correctamente</dd>
+            <dd>3 Se esta procesando la peticion</dd>
+            <dd>4 Listo para ser usado</dd>
+            <pre class="prettyprint">
+            peticion.addEventListener("readystatechange", () => {
+                if (peticion.readyState == 4 && peticion.status ==200) {
+                    console.log(peticion.response)
+                }</pre>
+            <dt>Objeto ActivXObject</dt>
+            <dd>Es cuando no esta soportado el XMLHTTPRequest como por ejemplo en IE</dd>
+            <pre class="prettyprint"><code>
+                if (window.XMLHttpRequest) peticion = new XMLHttpRequest();
+                else peticion = new ActiveXObject("Microsoft.XMLHTTP");
+                
+            </code></pre>
+            <dt>Nueva forma de trabajar el resultado</dt>
+            <dd>Ahora se trabaja con el evento load y no hace falta verificar el estado</dd>
+            <pre class="prettyprint linenums:true">
+        peticion.addEventListener("load", () => {
+            let respuesta;
+            if (peticion.status == 200) respuesta = peticion.response;
+            else respuesta = "Lo siento no se encontro el resultado";
+        
+            console.log(respuesta)
+        
+        })
+    </pre>
+            <dt>Enviar peticiones POST</dt>
+            <dd></dd>
+        </dl>
+        <h2>XMLHTTPRequest, Peticiones, etc</h2>
+
+        <h2>Diferencias entre GET y POST</h2>
+        <dt>Get</dt>
+        <dd>Las peticiones get las vemos en la url y la cantidad de datos no puede superar el maximo establecido</dd>
+        <dd>Solo admite caracteres ascii</dd>
+        <dt>Post</dt>
+        <dd>Estas peticiones van cifradas a traves del metodo post</dd>
+        <dd>Admite todo tipo de caracteres</dd>
+        <dd>Se recomienda para disparar acciones. Por ejemplo registro en base de datos</dd>
+        <pre class="prettyprint ">
+    peticion.addEventListener("load", () => {
+        let respuesta;
+        if (peticion.status == 201||peticion.status == 200) {
+                respuesta = peticion.response;
+                console.log(JSON.parse(respuesta));
+        } else {
+                respuesta = "Lo siento no se encontro el resultado";        
+                console.log(respuesta)
+        }
+        })
+        peticion.open("POST", "https://reqres.in/api/users");
+        peticion.setRequestHeader("Content-type","application/json;charset=UTF8")
+        peticion.send(JSON.stringify({
+            "name": "morpheus",
+            "job": "leader"
+        }))</pre>
+        <h2>Fetch</h2>
+        <dl>
+            <dt>Introduccion</dt>
+            <dd>Es para trabajar con el objeto XMLHTTPRequest, tecnicamente lo reemplazo y lo trae como un promesa encapsulada. Usando los metodos podemos convertirlo en un tipo de dato valido</dd>
+            <dt>Basado en promesas</dt>
+            <dd></dd>
+            <dt>Objeto fetch</dt>
+            <dd>Por defecto es de tipo get</dd>
+            <dt>Metodo post</dt>
+            <pre class="prettyprint">
+    fetch("https://reqres.in/api/users",{
+        method : "POST",
+        body : JSON.stringify({
+            "name": "morpheus",
+            "job": "leader"
+        }),
+        headers: {"Content-type":"application/json"}
+    }).then(res => res.json())
+      .then(res => console.log(res))
+            </pre>
+            <dt>text()</dt>
+            <dd>Es para desencapsular la promesa en formato texto</dd>
+            <pre class="prettyprint ">
+    fetch("https://reqres.in/api/users?page=2")
+        .then(res => res.text())
+        .then(res => console.log(res))</pre>
+           
+            <dt>json()</dt>
+            <dd>Es para desencapsular la promesa en formato JSON</dd>
+            <pre class="prettyprint ">
+    fetch("https://reqres.in/api/users?page=2")
+        .then(res => res.text())
+        .then(res => console.log(res))</pre>
+ 
+            <dt>blob()</dt>
+            <dd>Sirve para manejar un tipo de dato mas amplio y nos genera una url temporal </dd>
+            <pre class="prettyprint">   
+    let imagen = document.querySelector(".imagen");
+    fetch("LogoLB.png")
+        .then(res => res.blob())
+        .then(img => imagen.src = URL.createObjectURL(img))</pre>
+            <img class="imagen"></img>
+
+            <dt>formData()</dt>
+            <dd></dd>
+            <dt>arrayBuffer()</dt>
+            <dd></dd>
+        </dl>
+
+        <h2>Librería Axios</h2>
+        <dl>
+            <dt>Introduccion e instalacion</dt>
+            <dd>No es nativo por lo que hay que instalarlo</dd>
+            <pre class="prettyprint">
+    <span class="tag">&lt;script src = "https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"&gt;</span><span class="tag">&lt;/script&gt;</span>           
+    
+    axios("informacion.txt")
+        .then(res => console.log(res))</pre>
+            <dt>Basado en promesas</dt>
+            <dd> se maneja al igual que las promesa con el .then()</dd>
+            <dt>Objeto axios</dt>
+            <dd>por defecto nos devuelve el objeto json de la peticion get por defecto tambien y pone automaticamente el header</dd>
+            <dt>metodo get() y post()</dt>
+            <dd>Por defecto es get pero se puede escribir axios.get() y para el metodo post se debe escribir axios.post(param api, param json)</dd>
+            <pre class="prettyprint">
+    axios.post("https://reqres.in/api/users",{
+        "nombre":"Giuliano",
+        "apellido": "Baldini"
+        })
+        .then(res => console.log(res))</pre>
+            <dt>formas de enviar datos</dt>
+            <dd>Se usa post y puede enviarse directamente en formato json</dd>
+            <pre class="prettyprint">
+    axios.post("https://reqres.in/api/users", {
+        "nombre": "Giuliano",
+        "apellido": "Baldini"
+    })
+        .then(res => console.log(res))
+    
+    axios("https://reqres.in/api/users", {
+        method: "post",
+        data:{"nombre": "Giuliano",
+              "apellido": "Baldini"}
+    })
+        .then(res => console.log(res))
+            </pre>
+            <dt>Ventajas</dt>
+            <dd>Menos codigo y misma performance</dd>
+        </dl>
+
+        <h2>Fetch y Axios con Async & Await</h2>
+        <dl>
+            <dt>Implementacion</dt>
+            <dd> se agrega una funcion async y await en las promesas</dd>
+            <dt>Importancia de Try y catch</dt>
+            <dd>esto nos permite capturar errores</dd>
+        </dl>
+
+        <h2>Historia de Cofla 13</h2>
+        <a href="cofla.html">Historia de cofla 13</a>
+    </ul>
+    <script src="async.js"></script>
+
+</body>
+
+</html>

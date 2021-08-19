@@ -1,0 +1,105 @@
+body{
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(229, 226, 226);
+
+    /* transition: all 0.4s; */
+    
+}
+
+header{
+    background-color: #5e35c9;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a{
+    font-weight: bolder;
+    text-decoration: none;
+    color: #000;
+    font-size: 2em;
+}
+
+header button {
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    background: transparent;
+}
+
+header button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+main {
+    
+    width: 88%;
+    margin: 0 auto;
+}
+
+main h1{
+    font-size: 3em;
+}
+
+main .datos {
+    padding-bottom: 30px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex: 0 4 100px; 
+}
+
+.portada{
+    width: 100%;
+    max-width: 800px;
+}
+
+
+main p{
+    font-size: 1em;
+}
+main blockquote {
+    font-size: 1.2em;
+    border-left: solid 15px rgb(3, 14, 65);
+    background-color: rgb(149, 185, 214);
+    padding: 20px;
+}
+
+body.darkmode {
+    color: #fff;
+    background-color: rgb(38, 32, 49);
+}
+.darkmode header a,button{
+    color: #fff;
+}
+.darkmode header {
+    background-color: rgb(23, 13, 43);
+}
+
+.darkmode button:hover{
+    background-color: #fff;
+    color: #000;
+}
+
+.darkmode main a {
+    color: yellowgreen
+}
+
+.darkmode main strong{
+    color: #fff
+}
+
+.darkmode main blockquote{
+    border-left-color : rgb(1, 61, 61) ;
+    background-color: rgb(31, 100, 100);
+}

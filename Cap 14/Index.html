@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pre.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <title>Capitulo 14</title>
+</head>
+
+<body>
+    <h1>Capitulo 14</h1>
+
+    <h2>Apertura del capitulo 14</h2>
+    <h2>Prototipos</h2>
+    <dt>Definicion</dt>
+    <dd>Los objetos se basan en un prototipo, en lugar de las clases. A partir del prototipo heredan comportamientos
+    </dd>
+    <dt>Prototype Chain</dt>
+    <dd>Si creo un nuevo prototipo este va a tener un padre</dd>
+    <dt>Prototype Object</dt>
+    <dd>Este es el padre de todos los prototipos</dd>
+
+    <h2>Caracteristicas de los prototipos</h2>
+
+    <dd>Un prototipo definico en su codigo fuente es mutable</dd>
+    <dd>Es en su mismo un objeto, asi como otros</dd>
+    <dd>Tiene una existencia fisica en la memoria</dd>
+    <dd>Puede ser modificado y llamado</dd>
+    <dd>Puede ser visto como un modelo ejemplar de una familia objeto</dd>
+    <dd>Un objeto hereda propiedades, valores y metodos de su prototipo</dd>
+    <dd>con .prototype accedemos a lo que nosotros creamos y con .__proto__ acedemos a los valores del lenguaje</dd>
+
+    <h2>Dunder Proto</h2>
+    <dd>se accede con .__proto__ y muestra el restro de propiedares que puede heredar mi objeto como por ejemplo los
+        metodos</dd>
+
+    <h2>Sobrescribir __proto__ vs método</h2>
+    <dd>Se puede sobrescribir por fuera con el metodo</dd>
+    <pre class="prettyprint">
+objeto.hablar = ()=>{ //##asi solo se modifica por metodo
+    console.log("modificado y heredado")
+}
+</pre>
+    <dd>Se puede sobreescribir por dentro del prototipo</dd>
+    <pre class="prettyprint">
+objeto.__proto__.hablar = ()=>{
+    console.log("modificado")
+}
+
+</pre>
+
+    <h2>Modo estricto ("use strict")</h2>
+    <dd>Convierte errores de JavaScript en excepciones</dd>
+    <dd>;ejorando la optimizacion de los errores y consigue mejores tiempos de ejecucion</dd>
+    <dd>Evita sintaxis usadas en posteriores a ES6</dd>
+    <dd>No permite que el programador realize una "mala sintaxis"</dd>
+
+    <h2>Usando modo estricto</h2>
+    <pre class="prettyprint"> "use strict";</pre>
+    <dd>Variables declaradas</dd>
+    <dd>Modificar propiedades (defineProperty() y writeable:)</dd>
+    <dd>con use strict sale un error si se reescribe la propiedad. Si no se usa strict en consola no nos avisa pero la
+        propiedad no se modifica, simplemente se ignora lo que no se puede hacer</dd>
+    <pre class="prettyprint">const obj = {};
+Object.defineProperty(obj,'nombre',{value:"Pedro",writeable:false});</pre>
+    <dd>Agregar propiedades</dd>
+    <dd>Se puede usar .preventExtencions(objeto) para que no se agreguen nuevas propiedades</dd>
+    <pre class="prettyprint">
+const obj = {nombre: "Luca"};
+Object.preventExtensions(obj);
+</pre>
+    <dd>No se puede agrear propiedades a un String</dd>
+    <dd>No existen las multiples variables en una funcion. Es decir parametros repetidos. Sin use strict nos toma el
+        ultimo parametro como valido,con use strict arroja error</dd>
+    <pre class="prettyprint">function hablar (texto,texto){
+    console.log(texto)
+}</pre>
+    <dd>Delete en objetos o variables no funciona. Si funciona para propiedades</dd>
+    <dd>Las palabras reservadas no pueden ser usadas como variables</dd>
+    <dd>Cambia el This. Por ejemplo lo toma como undefined en use strict</dd>
+    <dd>Numeros octales con una "o" adelante y no existe el with</dd>
+    <dd>Arguments y Eval no pueden ser variables</dd>
+    <dd>use strict puede ser usado dentro del scope o bloque como por ejemplo dentro de funciones. Debe ir como primer
+        linea del bloque</dd>
+
+
+    <h2>Funciones flecha</h2>
+
+    <dt>¿Por que aparecieron? Funciones compactas y el uso de this</dt>
+    <pre class="prettyprint">
+    const saludar = () =>{
+        console.log ("hola");
+        console.log("¿Como estas?")
+    }
+    saludar ()
+</pre>
+    <dd>Si solo hay una expresión la retornan. Si es setencia no la retornan</dd>
+    <pre class="prettyprint">
+//const saludar = function(){return nombre ="pedro";}//es equivalente
+//const saludar =()=> nombre ="pedro";
+const saludar =()=> nombre ="pedro";//expresion
+resultado = saludar()
+console.log(resultado);
+</pre>
+    <dd>Parentesis opcionales ante un solo parametro. Sin parametros si se require parentesis)</dd>
+    <pre class="prettyprint">
+    const saludar =(res)=> nombre = res;
+    const saludar = res => nombre = res;
+</pre>
+    <dd>No son adecuadas para ser usadas como metodos y no pueden ser usadas como constructores por que this funciona de
+        otra manera ya que apuntan al objeto window</dd>
+
+    <dd>retornan literales si su cuerpo esta entre ()</dd>
+
+    <dt>This contextual (no tienen propio this, si no que toman el de la funcion que lo envuelve</dt>
+    <dd>This apunta al objeto window pero al usar strict genera error</dd>
+
+    <dt>Relacion con modo estricto</dt>
+    <dd>Las reglas aplicadas al This son ignoradas</dd>
+    <dt>Funcion flecha invocada a traves de los metodos call, apply y bind</dt>
+    <dd>No tienen objet Arguments</dd>
+    <dd>No tienen propiedad del prototipo prototype</dd>
+    <dd>No se puede usar Yield ( por ende no se pueden usar como funciones generadoras</dd>
+    <dd>No puede contener saltos de lines entre sus parametros y su flecha</dd>
+
+    <dd>Orden de parseo</dd>
+
+
+
+    <h2>Recursividad</h2>
+    <dt>Definicion</dt>
+    <dd>Es una funcion que se llama a si misma, por ejemplo para una validacion</dd>
+
+    <h2>Clausuras (o closures)</h2>
+
+    <dd>por ejemplo</dd>
+    <div>
+        <button class="t12">12px</button>
+        <button class="t14">14px</button>
+        <button class="t16">16px</button><br>
+        <div class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit neque voluptate mollitia assumenda amet. Laborum corporis, modi magni quibusdam nisi delectus facilis tempore dolorum reiciendis voluptas, accusantium itaque iste officia.</div>
+    </div>
+    <dd>Arguments</dd>
+    <dd>ya no existe mas</dd>
+    <dd>Parametro por defecto</dd>
+    <pre class="prettyprint">
+    const suma = (a = =, b = 0)=>{
+        return a+b
+    }
+    </pre>
+    <h2>Parametro Rest (...args)</h2>
+    <dd>Sirve para pasar varios parametros y los tomo como un array</dd>
+    <dd>debe ponerse al final</dd>
+    <pre class="prettyprint">
+        function sumar (frase,...num){}
+        const suma = (frase,...num) => {}
+    </pre>
+    <h2>Destructuración </h2>
+
+
+    <h2>Operador ternario (o condicional)</h2>
+    <dd>es un operador similar al condicional.</dd>
+<pre class="prittyprint">
+let edad = 17;
+
+(edad>18) ? console.log("mayor") : console.log("menor")
+
+(edad>18) 
+    ?( 
+        console.log("mayor"), 
+        console.log("Puede pasar"), 
+    )
+    : console.log("menor");
+</pre>
+
+    <h2>Operador spread</h2>
+    <dd>es un operador para añadir array a otros arrays</dd>
+    <pre class="prettyprint">
+    array1.push(...array2); </pre>
+    <dd>Tambien concatena array</dd>
+    <dd>de forma que no modifica a los array originales</dd>
+    <pre class="prettyprint">
+        let array3 =[...array1,...array2] </pre>
+    
+    <dd>como argumneto se puede usar ...rest</dd>
+    <pre class="prettyprint">
+    console.log (...array)
+    valor 1 valor 2 valor 3    </pre>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
