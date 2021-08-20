@@ -1,0 +1,23 @@
+
+.contenedor {
+    width: 100vw;
+    height: 100hw;
+
+}
+
+.circulo {
+    padding: 40px;
+    margin: 10px;
+    display: inline-block;
+    background-color: salmon;
+    border-radius: 50%;
+    width: 150px;
+    height:150px;
+}
+.cuadrado{
+    padding: 40px;
+    margin: 10px;
+    background-color: royalblue;
+    width: 400px;
+    height: 200px;
+}
