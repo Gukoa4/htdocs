@@ -15,7 +15,7 @@ zona.addEventListener("drop",(evt)=>{
 for (let i =1; i<document.querySelector(".texturas").children.length+1;i++){
     document.querySelector(`.textura${i}`).addEventListener("dragstart",(evt)=>{
         transferirTextura(i,evt)
-        console.log (i);
+       
     })
 }
 

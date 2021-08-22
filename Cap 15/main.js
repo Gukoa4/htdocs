@@ -55,3 +55,18 @@ function store(value) {
 }
 
 load();
+
+const geoloaction = navigator.geolocation;
+
+const position = (pos)=>{
+    console.log(pos)
+}
+const err = () => console.log(e);
+
+const option = {
+    maximumAge: 0,
+    timeout: 3000,
+    enableHighAccuracy: true
+}
+
+geoloaction.getCurrentPosition(position,err,option);
