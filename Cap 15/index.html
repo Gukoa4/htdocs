@@ -87,14 +87,51 @@
     <dt>Ejemplo cargar galeria dinamicamente</dt>
     <a href="carga dinamica/index.html">Ejemplo carga</a>
     <a href="Galeria dinamica/index.html">Ejemplo Galeria</a>
-    <dt>Ejemplo Combinar con Drag & Drop</dt>
+    <dt>Ejemplo Combinar con Drag & Drop Barra de progreso con progress y loadend</dt>
     <a href="Drag and drop y loadend/index.html">Ejemplo drag and drop</a>
-    <dt>Ejemplo Barra de progreso con progress y loadend</dt>
+   
 
     <!-- <input type="file" id= "archivo"> -->
     <input type="file" id= "archivo" multiple=true>
     <div class="zona"></div>
-    <div class="resultado"></div>
+
+    <a href="IndexedDB/index.html">
+        <h2>IndexedDB</h2>
+    </a>
+    
+    <dt>Caracteristicas</dt>
+    <dd>Almacena informacion en el navegador</dd>
+    <dd>Es orientada a objetos</dd>
+    <dd>Es asincrona</dd>
+    <dd>Trabaja con eventos del dom</dd>
+
+    <dt>Procedimiento de creacion</dt>
+    <dd>Objeto IndexedDB</dd>
+    <dd>Metodo open()</dd>
+    <dd>onupgradeneed, onsucess, onerror</dd>
+
+    <dt>Crear almacen de objetos </dt>
+    <dd>Almacen de objetos</dd>
+    <dd>Metodo createObjectStore()</dd>
+    <dd>autoIncrement vs keyPath</dd>
+
+    <dt>Almacenar objetos</dt>
+    <dd>para abm se usa transaction</dd>
+    <dd>Metodo transaction.objectStore()</dd>
+    <dd>IDBTransaction.objectStore()</dd>
+    <dd>IDBObjectStore.add()</dd>
+
+    <dt>Leer objetos del almacen</dt>
+    <dd>IDBObjectStore.openCursor()</dd>
+    <dd>Metodo continue()</dd>
+
+    <dt>Modificar objetos</dt>
+    <dd>IDBObjectStore.put()</dd>
+
+    <dt>Eliminar objetos</dt>
+    <dd>IDBObjectStore.delete()</dd>
+    
+
 
     <script src="main.js"></script>
 </body>

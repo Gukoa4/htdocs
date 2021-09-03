@@ -138,7 +138,7 @@ const leerImagen = (Imagenes) => {
     }
 }
 */
-//refactorizar para usar fragment
+//refactorizar para usar async await
 
 const leerImagen = (Imagenes) => {
     //let resultado = document.querySelector(".resultado");
@@ -155,7 +155,8 @@ const leerImagen = (Imagenes) => {
            fragmentos.appendChild(newImg);       
         });             
     }
-    zona.appendChild(fragmentos);
-    console.log(zona,"zona");
+    setTimeout(()=>{
+        zona.appendChild(fragmentos)
+    },1000)
 }
 
