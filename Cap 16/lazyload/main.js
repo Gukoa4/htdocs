@@ -52,11 +52,13 @@ const cargarPublicaciones = async (num) => {
       contador++;
       if (i == num - 1) observer.observe(newPublicacion);
     }else {
+      if (publicaciones.lastElementChild.id !== "final"){
         let final = document.createElement("H3");
         final.textContent = "No hay mas publicaciones";
+        final.id = "final";
         documentFragment.appendChild(final);
         break;        
-    }
+    }}
   }
   publicaciones.appendChild(documentFragment);
 };

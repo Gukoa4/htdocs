@@ -18,10 +18,12 @@
     <dt>Evento onchange</dt>
     <dt>¿Cuándo deberia usarlo?</dt>
 
-
     <h2>Intersection Observer</h2>
     <dt>¿Qué es y para qué sirve?</dt>
-    <dd>Permite observar la ubicacion del usuario respecto a la totalidad de la pagina</dd>
+    <dd>
+      Permite observar la ubicacion del usuario respecto a la totalidad de la
+      pagina
+    </dd>
     <dt>IntersectionObserver()</dt>
     <dd>Devulve true o false si esta en el viewport</dd>
     <dt>callback y options</dt>
@@ -31,25 +33,127 @@
     <a href="lazyload/lazyload.html">
       <dt>Ejemplo de uso Lazy Load</dt>
     </a>
-    <dd>el contenido se va cargando a medida que voy desplazando como un scroll infinito</dd>
-
-
-    <h2>Lazy Load</h2>
+    <dd>
+      el contenido se va cargando a medida que voy desplazando como un scroll
+      infinito
+    </dd>
+    <dt>visibilitychange</dt>
+    <dd>
+      Es un evento que se usa para saber si el usuario abandono la pestaña
+    </dd>
     <h2>Notifications</h2>
-    <h2>Web Workers</h2>
-    <h2>Same Origin Politic</h2>
-    <h2>Objeto Navigator</h2>
-    <h2>Memoization</h2>
-    <h2>Caché</h2>
-    <h2>Service Workers</h2>
-    <h2>Reto del Chat Realtime</h2>
-    <h2>Cachear sitio web y mostrarlo offline</h2>
-    <h2>Cookies</h2>
-    <h2>Crear aviso de uso de cookies</h2>
-    <h2>Objeto Screen</h2>
-    <h2>Objeto Canvas</h2>
-    <h2>Crear un web paint</h2>
+    <dt>Notifications.requestPermission()</dt>
+    <dt>Notifications.permission</dt>
+    <dt>Notifications(msg,options)</dt>
 
+    <a href="WebWorkers/index.html">
+      <h2>Web Workers</h2>
+    </a>
+    <dt>Tipos de Web Workers</dt>
+    <dd>Dedicated Worker</dd>
+    <dd>Shared Worker</dd>
+    <dd>Service Worker</dd>
+    <dd>Abstract Worker</dd>
+    <dt>Dedicated Worker: Worker()(Constructor)</dt>
+    <dt>Parametro Optiones (type, credetials y name)</dt>
+    <dt>
+      Metodo postMessage()(Enviar mensajes entre el web worker y el script
+      principal)
+    </dt>
+    <dt>
+      Evento onmessage(Recibir mensajes entre el web worker y el script
+      principal)
+    </dt>
+    <dt>Metodo terminate() (Finaliza la ejecucion del web worker)</dt>
+    <dt>Politica de origen crusado (Same-Origin)</dt>
+    <dd>no me permite acceder a un worker de otro puerto</dd>
+
+    <h2>Objeto Navigator</h2>
+    <dt>NavigatorID</dt>
+    NavigatorID.appCodeName NavigatorID.appName NavigatorID.appVersion
+    NavigatorInformation.connection NavigatorGeolocation.geolocation
+    NavigatorConcurrentHardware.hardwareConcurrency NavigatorID.
+    <dt>NavigatorLanguage</dt>
+    <dt>NavigatorOnLine</dt>
+    <dt>NavigatorContentUtits</dt>
+    <dt>NavigatorStorageUtils</dt>
+    <dt>NavigatorCookies</dt>
+    <dt>NavigatorConcurrentHardware</dt>
+    <dt>NavigatorPlugins</dt>
+    <dt>NavigatorUserMedia</dt>
+
+    <a href="Memoization/index.html">
+      <h2>Memoization</h2>
+    </a>
+    <dd>
+      Agrega valores al array y podemos mostrarlo sin ejecutar un proceso
+      nuevamente ya que toma como parmetro una funcion
+    </dd>
+
+    <a href="Cache/index.html">
+      <h2>Caché</h2>
+    </a>
+    <dt>Definicion</dt>
+    <dd>
+      memoria a corto plazo para que no se solicite muchas veces y asi ahorrar
+      recursos
+    </dd>
+    <dt>Usos</dt>
+    <dt>Cache.add(request)</dt>
+    <dd>
+      Toma una URL y agrega el objeto de respuesta resultante, equivalente a
+      llamar a fetch y luego put
+    </dd>
+    <dt>cache.addAll([]request)</dt>
+    <dd>Toma la URL y agrega todos los objetos de la respuesta resultante</dd>
+    <dt>cache.match(request,options)</dt>
+    <dd>
+      Devuelve un Promise que se resuelve con la respuesta asociada con la
+      primer solicitud coincidente en el objeto almacenado
+    </dd>
+    <dt>cache.matchAll(request[],options)</dt>
+    <dd>
+      Devuelve un Promise que se resuelve en una matriz de todas las solicitudes
+      coincidentes en el objeto almacenado
+    </dd>
+    <dt>cache.put(request,options)</dt>
+    <dd>
+      Toma tanto una solicitud como su respuesta y la agrega a la cache dada
+    </dd>
+    <dt>cache.delete(request,options)</dt>
+    <dd>
+      Para borrar un cache devuelve una promesa true si se borro exitosamente
+    </dd>
+    <dt>cache.keys</dt>
+    <dd>
+      Devuelve una promesa que se resuelve en una matriz de objetos alamcenados
+    </dd>
+
+    <h2>Service Workers</h2>
+    <dd>intercepta las paticiones entre el navegador y el servidor web</dd>
+    <dt>ServiceWorker interfaz</dt>
+
+    <dt>ciclo de vida</dt>
+
+    <dt>register()</dt>
+
+    <dt>postMessage()</dt>
+
+    <dt>Fetch Evento</dt>
+
+    <dt>Registrar cache y mostrar sitio web offline</dt>
+
+    <dt>Chat realtime</dt>
+
+    <h2>Cookies</h2>
+
+    <h2>Crear aviso de uso de cookies</h2>
+
+    <h2>Objeto Screen</h2>
+
+    <h2>Objeto Canvas</h2>
+
+    <h2>Crear un web paint</h2>
 
     <script src="main.js"></script>
   </body>
