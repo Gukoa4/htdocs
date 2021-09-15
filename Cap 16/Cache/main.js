@@ -25,7 +25,7 @@ caches.open("archivos-estaticos").then(cache =>{
     console.log("borrando...");
     cache.delete("index.html");
 });
-aches.open("archivos-estaticos").then(cache =>{
+caches.open("archivos-estaticos").then(cache =>{
   
     cache.keys().then(res=>{
         console.log("key",res)

@@ -1,0 +1,75 @@
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #345;
+
+  font-family: sans-serif;
+}
+.contenedor,form {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  background-color: teal;
+  margin: 5px;
+  margin-bottom: 0px;
+  padding: 10px;
+  border-radius: 5px 0px 0px 0px;
+  flex: 1;  
+  min-width: 220px;
+  max-width: 500px;
+}
+form{
+    margin: 0;
+    border-radius: 0px 0px 5px 5px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#btn-enviar{
+    outline: none;
+    border: none;
+    border-radius: 0%;
+    background-color:  rgb(2, 194, 194);
+    padding: 8px;
+
+}
+.ingresar{
+    background-color: rgb(2, 194, 194);
+    outline: none;
+    border:none;
+    height: 2em;
+    flex-grow: 2;
+    padding: 4px;
+
+}
+
+.mensaje {
+  color: #222;
+  position: relative;
+  margin-bottom: 5px;
+  border-radius: 0.35em;
+  display: flex;
+  max-width: max-content;
+}
+blockquote {
+  border-radius: 0.35em;
+  position: relative;
+  margin: 0;
+}
+
+.servidor {
+  background-color: #84e;
+  right: -2px m;
+  margin-right: 2px;
+  padding: 5px;
+  position: relative;
+  margin-bottom: 2px;
+  max-width: max-content;
+  align-self: flex-end;
+  
+}
+.cliente {
+  background-color: #8e4;
+  left: -1em;
+  padding: 5px;
+  margin-left: 1em;
+}
