@@ -3,7 +3,8 @@ let monto = document.getElementById("monto");
 let consultar =document.getElementById("btnConsultar");
 
 consultar.addEventListener("click",()=>{
-    document.querySelector(".una-cuota").innerHTML += "$"+ monto.value*1;
+    
+    document.querySelector(".una-cuota").innerHTML +=  monto.value*1;
     document.querySelector(".cada-una").innerHTML = document.querySelector(".una-cuota").textContent.slice(1)/1;
     
     document.querySelector(".dos-cuota").innerHTML += "$"+ monto.value*1.0942;
