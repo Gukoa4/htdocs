@@ -19,6 +19,7 @@ IDBRequest.addEventListener("success", () => {
 IDBRequest.addEventListener("error", () => {
   console.log("ocurrio un error al abrir la base de datos");
 });
+
 document.getElementById("name").addEventListener("keyup", (evt) => {
   if (evt.keyCode === 13) {
     evt.preventDefault();
